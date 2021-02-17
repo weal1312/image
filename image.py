@@ -20,8 +20,8 @@ class IMG:
 	def split(self):
 		dest_width = self.width / 2
 
-		img_l = self.img.crop(0, 0, dest_width, self.dest_height)
-		img_r = self.img.crop(dest_width, 0, self.width, self.dest_height)
+		img_l = self.img.crop((0, 0, dest_width, self.height))
+		img_r = self.img.crop((dest_width, 0, self.width, self.height))
 
 		img_l.save(os.path.join(self.dest_dir, self.filename + '_2.png'))
 		img_r.save(os.path.join(self.dest_dir, self.filename + '_1.png'))
